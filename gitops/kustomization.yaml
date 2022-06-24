@@ -1,0 +1,18 @@
+resources:
+#- cp4ba/cp4ba.yaml
+#- cp4d/cp4d.yaml
+#- cp4i/cp4i.yaml
+#- cp4security/cp4security.yaml
+#- cp4waiops/cp4waiops.yaml
+patches:
+- target:
+    group: argoproj.io
+    kind: Application
+    labelSelector: "gitops.tier.layer=daffy"
+  patch: |-
+    - op: add
+      path: /spec/source/repoURL
+      value: https://github.com/daffy-gitops/gitops-main.git
+    - op: add
+      path: /spec/source/targetRevision
+      value: master

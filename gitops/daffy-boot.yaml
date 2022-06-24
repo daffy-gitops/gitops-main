@@ -1,0 +1,77 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: 00-daffy-boot
+  labels:
+    gitops.tier.layer: daffy
+spec:
+  sourceRepos: [] # Populated by kustomize patches in 1-infra/kustomization.yaml
+  destinations:
+  - namespace: cp4ba
+    server: https://kubernetes.default.svc
+  - namespace: cp4d
+    server: https://kubernetes.default.svc
+  - namespace: cp4i
+    server: https://kubernetes.default.svc
+  - namespace: cp4security
+    server: https://kubernetes.default.svc
+  - namespace: cp4waiops
+    server: https://kubernetes.default.svc
+  - namespace: ibm-common-services
+    server: https://kubernetes.default.svc
+  - namespace: tools
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: ""
+    kind: Namespace
+  - group: ""
+    kind: RoleBinding
+  - group: "rbac.authorization.k8s.io"
+    kind: ClusterRole
+  - group: "security.openshift.io"
+    kind: SecurityContextConstraints
+  - group: policy
+    kind: PodSecurityPolicy
+  - group: "console.openshift.io"
+    kind: ConsoleNotification
+  - group: "console.openshift.io"
+    kind: ConsoleLink
+  - group: "machine.openshift.io"
+    kind: MachineSet
+  - group: "machineconfiguration.openshift.io"
+    kind: MachineConfigPool
+  - group: "machineconfiguration.openshift.io"
+    kind: ContainerRuntimeConfig
+  - group: "tuned.openshift.io"
+    kind: Tuned
+  - group: "batch"
+    kind: Job
+  roles:
+  # A role which provides read-only access to all applications in the project
+  - name: read-only
+    description: Read-only privileges to my-project
+    policies:
+    - p, proj:my-project:read-only, applications, get, my-project/*, allow
+    groups:
+    - argocd-admins
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 00-daffy-boot
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+  labels:
+    gitops.tier.layer: daffy
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: 00-daffy-boot
+  source: # repoURL  and targetRevision populated by kustomize patches in gitops/kustomization.yaml
+    path: gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
