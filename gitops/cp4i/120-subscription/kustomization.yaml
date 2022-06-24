@@ -1,5 +1,14 @@
 resources:
-#- ../../daffy/cp4i/templates/xxx.yaml
+#- subscriptions/ibm-cp-integration/cp4i_all_subscription.yaml
+#- subscriptions/individual-subscriptions/aspera.yaml
+#- subscriptions/individual-subscriptions/op-dashboard.yaml
+#- subscriptions/individual-subscriptions/api-connect.yaml
+#- subscriptions/individual-subscriptions/mq.yaml
+#- subscriptions/individual-subscriptions/platform-nav.yaml
+#- subscriptions/individual-subscriptions/eventstreams.yaml
+#- subscriptions/individual-subscriptions/app-connect.yaml
+#- subscriptions/individual-subscriptions/automation-foundation.yaml
+#- subscriptions/individual-subscriptions/datapower.yaml
 patches:
 - target:
     group: argoproj.io

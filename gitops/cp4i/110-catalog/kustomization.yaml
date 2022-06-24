@@ -1,5 +1,5 @@
 resources:
-#- ../../daffy/cp4i/templates/xxx.yaml
+- catalogsource/ibm-operator-catalog/catalogsource.yaml
 patches:
 - target:
     group: argoproj.io
