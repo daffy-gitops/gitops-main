@@ -38,7 +38,7 @@ spec:
       storage:
         storageClassName: "ibmc-block-gold"
     openTracing:
-      enabled: @TRACING_ENABLED@
+      enabled: true
       odTracingNamespace: cp4i
   management:
     databaseVolumeClaimTemplate:
