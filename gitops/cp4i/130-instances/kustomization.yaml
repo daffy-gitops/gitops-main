@@ -1,16 +1,16 @@
 resources:
-#- customresource/platformnavigator.yaml
-#- customresource/ace-dashboard.yaml
-#- customresource/mq-single.yaml
-#- customresource/mqhaodtracing.yaml
-#- customresource/ace-designer.yaml
-#- customresource/tracing.yaml
-#- customresource/apic.yaml
-#- customresource/mqodtracing.yaml
-#- customresource/apicodtracing.yaml
-#- customresource/eventstreams.yaml
-#- customresource/mq-ha.yaml
-#- customresource/assetrepository.yaml
+- customresource/platformnavigator.yaml
+- customresource/ace-dashboard.yaml
+- customresource/mq-single.yaml
+- customresource/mqhaodtracing.yaml
+- customresource/ace-designer.yaml
+- customresource/tracing.yaml
+- customresource/apic.yaml
+- customresource/mqodtracing.yaml
+- customresource/apicodtracing.yaml
+- customresource/eventstreams.yaml
+- customresource/mq-ha.yaml
+- customresource/assetrepository.yaml
 patches:
 - target:
     group: argoproj.io
