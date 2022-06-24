@@ -8,6 +8,8 @@ metadata:
 spec:
   sourceRepos: [] # Populated by kustomize patches in 1-infra/kustomization.yaml
   destinations:
+  - namespace: openshift-gitops
+    server: https://kubernetes.default.svc
   - namespace: cp4ba
     server: https://kubernetes.default.svc
   - namespace: cp4d
