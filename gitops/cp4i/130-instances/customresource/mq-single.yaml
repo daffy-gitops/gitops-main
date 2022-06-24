@@ -36,5 +36,5 @@ spec:
   web:
     enabled: true
   tracing:
-    enabled: @TRACING_ENABLED@
+    enabled: true
     namespace: cp4i
