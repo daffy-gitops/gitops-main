@@ -1,6 +1,8 @@
+bases:
+- ../
 resources:
-- ../namespaces/namespace_cp4i.yaml
-- ../operatorgroup/operatorgroup.yaml
+- namespaces/namespace_cp4i.yaml
+- operatorgroup/operatorgroup.yaml
 patches:
 - target:
     group: argoproj.io
