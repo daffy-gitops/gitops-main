@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cp4d-100-infra
+  labels:
+    gitops.tier.layer: daffy
+  annotations:
+    argocd.argoproj.io/sync-wave: "100"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: 00-daffy-boot
+  source:
+    path: gitops/cp4d/100-infra
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

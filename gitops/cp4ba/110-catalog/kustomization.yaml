@@ -1,9 +1,5 @@
 resources:
-#- 100-infra/100-infra.yaml
-#- 110-catalog/110-catalog.yaml
-#- 120-subscription/120-subscription.yaml
-#- 130-instances/130-instances.yaml
-#- 140-apps/140-apps.yaml
+#- ../../daffy/cp4ba/templates/xxx.yaml
 patches:
 - target:
     group: argoproj.io
