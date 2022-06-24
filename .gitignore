@@ -1,0 +1,12 @@
+daffy/cp*
+daffy/wsa
+daffy/ocp
+daffy/db2
+daffy/ldap
+daffy/*.sh
+daffy/*.md
+daffy/env
+daffy/fixpaks
+daffy/util
+daffy/security
+daffy/quickStart.txt
