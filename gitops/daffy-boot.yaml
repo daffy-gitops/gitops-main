@@ -10,6 +10,7 @@ spec:
   destination:
     namespace: openshift-gitops
     server: https://kubernetes.default.svc
+  project: default
   source: # repoURL  and targetRevision populated by kustomize patches in gitops/kustomization.yaml
     repoURL: https://github.com/daffy-gitops/gitops-main.git
     targetRevision: master
