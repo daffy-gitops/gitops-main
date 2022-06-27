@@ -5,7 +5,7 @@ resources:
 - customresource/mqhaodtracing.yaml
 - customresource/ace-designer.yaml
 - customresource/tracing.yaml
-- customresource/apic.yaml
+#- customresource/apic.yaml
 - customresource/mqodtracing.yaml
 - customresource/apicodtracing.yaml
 - customresource/eventstreams.yaml
