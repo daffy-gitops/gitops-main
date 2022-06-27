@@ -11,7 +11,7 @@ resources:
 - customresource/eventstreams.yaml
 - customresource/mq-ha.yaml
 - customresource/assetrepository.yaml
-- customresource/od-store-cred.yaml
+#- customresource/od-store-cred.yaml
 patches:
 - target:
     group: argoproj.io
