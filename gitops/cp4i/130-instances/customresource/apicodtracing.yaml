@@ -1,7 +1,7 @@
 apiVersion: integration.ibm.com/v1beta2
 kind: OperationsDashboardServiceBinding
 metadata:
-  name: od-service-binding
+  name: apic-od-service-binding
 spec:
   odNamespace: "cp4i"
   odInstanceName: "tracing"

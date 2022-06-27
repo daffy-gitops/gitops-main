@@ -6,11 +6,12 @@ resources:
 - customresource/ace-designer.yaml
 - customresource/tracing.yaml
 - customresource/apic.yaml
-#- customresource/mqodtracing.yaml
-#- customresource/apicodtracing.yaml
+- customresource/mqodtracing.yaml
+- customresource/apicodtracing.yaml
 - customresource/eventstreams.yaml
 - customresource/mq-ha.yaml
 - customresource/assetrepository.yaml
+- customresource/od-store-cred.yaml
 patches:
 - target:
     group: argoproj.io
